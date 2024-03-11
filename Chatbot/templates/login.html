@@ -1,0 +1,72 @@
+{%  include 'publicheader.html' %}
+      <style>
+    table {
+
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 20);
+    }
+    .btn-success {
+        background-color: #28a745;
+        color: #fff;
+    }
+</style>
+<style>
+	th,td{
+		height: 30px;
+		color: antiquewhite;
+		padding: 15px;
+	}
+</style>
+	<div id="pageintro" class="hoc clear" > 
+    <!-- ################################################################################################ -->
+    <article class="center">
+    	<center>
+      <h3 >LOGIN</h3>
+      <form method="post" >
+		<table style="line-height: 50px">
+			<tr>
+				<th>Username</th>
+				<td><input type="text" name="username" style="width: 250px;height: 38px;border-radius: 10px;color: black"></td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td><input type="Password" name="password" style="width: 250px;height: 38px;border-radius: 10px;color: black"></td>
+			</tr>
+			<tr >
+				<td align="center" colspan="2" >
+				<input type="submit" name="login" value="Login" class="btn btn-success">
+				</td>
+			</tr>
+		</table>
+			</form>
+     	</center>
+
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+{% include 'footer.html' %}
+
+
+
+
+
+<!-- <h1>Login</h1>
+	<form method="post">
+		<table>
+			<tr>
+				<th>Username</th>
+				<td><input type="Username" name="username"></td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td><input type="Password" name="password"></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2" >
+				<input type="submit" name="login" value="Login">
+				</td>
+			</tr>
+		</table>
+	</form> -->

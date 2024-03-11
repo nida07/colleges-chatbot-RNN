@@ -1,0 +1,55 @@
+{% include 'adminheader.html' %}
+      <style>
+    table {
+
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 20);
+    }
+    .btn-success {
+        background-color: #28a745;
+        color: #fff;
+    }
+</style>
+<style>
+	th,td{
+		height: 30px;
+		color: antiquewhite;
+		padding: 15px;
+	}
+</style>
+<br><br><br><br>
+<center>
+	<h1> Complaints</h1>
+	
+	<table class="table" style="width:600px;color:white;">
+		<tr>
+			<th>Complaint</th>
+			<th>Reply</th>
+			<th>Date</th>
+			<th></th>
+		</tr>
+		{% for row in data['complaint'] %}
+		<tr>
+			<td>{{row['complaint']}}</td>			
+			
+			
+
+			{% if row['reply']=="pending" %}
+			<td><a href="adminreply?cid={{row['complaint_id']}}" class="btn btn-danger">Reply</a></td>
+			{%else%}
+			<td>{{row['reply']}}</td>
+			{% endif %}
+			<td>{{row['date']}}</td>
+		</tr>
+
+		{% endfor %}
+	</table>
+		</center>
+<!-- <style type="text/css">
+  	td,th,tr{
+  		border: none!important;
+  	}
+  </style> -->
+	
+{% include 'footer.html' %}

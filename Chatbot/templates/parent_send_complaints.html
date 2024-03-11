@@ -1,0 +1,50 @@
+{%include 'parent_header.html' %}
+	<br><br><br>
+<center>
+	
+	<form method="post">
+		
+		<table class="table" style="width:500px;color: white;">
+			<h1 >Sendcomplaint</h1>
+			<tr>
+				<th style="color: white">Complaint</th>
+				<td><input type="text" name="com"  class="form-control" required="" style="width: 200px;height: 34px;border-radius: 10px;color: black"></td>
+			</tr>
+				
+			
+			
+			<tr>
+				<td align="center" colspan=2><input type="submit" name="submit" value="ADD" class="btn btn-danger"></td>
+			</tr>
+		</table>
+	<br><br><br>
+		<center>
+		<h1>View Complaints</h1>
+		<table class="table" style="width:500px;color: white;">
+			<tr>
+				<th>Slno.</th>
+				<th>Complaint</th>
+				<th>Reply</th>
+				<th>Date</th>
+				
+			</tr>
+			{%for r in data['view'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{r['complaint']}}</td>
+				<td>{{r['reply']}}</td>
+				<td>{{r['date']}}</td>
+				</tr>
+			{%endfor%}
+			
+			
+		</table>
+	</center>
+	</form>
+</center>
+ <style type="text/css">
+  	td,th,tr{
+  		border: none!important;
+  	}
+  </style>
+{%include 'footer.html' %}

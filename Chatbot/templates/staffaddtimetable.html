@@ -1,0 +1,62 @@
+{% include 'staffheader.html' %}
+<center>
+<table>
+	<form method="post">
+	<h2>Time Table</h2>
+	<!-- <tr>
+		<th>select course</th>
+		<td>
+			<select name="cname" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: black">
+				<option>Select Course</option>
+				{% for row in data['course'] %}
+				<option value="{{row['course_id']}}">{{row['course']}}</option>
+				{% endfor %}
+			</select>
+		</td>
+	</tr> -->
+	<tr>
+		<th>Semester</th>
+		<td><input type="text" name="semester" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+	</tr>
+	<tr>
+		<th>Date</th>
+		<td><input type="date" name="date" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+	</tr>
+	<tr>
+		<th>Time</th>
+		<td><input type="time" name="time" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+	</tr>
+	<tr>
+		<td align="center" colspan="2">
+		<input type="submit" name="submit" value="submit" class="btn btn-primary"></td>
+	</tr>
+</table>
+<h1>View Time Table</h1>
+		<table class="table" style="width: 700px;color:white;" border="2">
+			<tr>
+				<th>Sl.no</th>
+				
+				<th>Course</th>
+				<th>Semester</th>
+				<th>Date</th>
+				<th>Time</th>
+			</tr>
+			{% for i in data['view'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				
+				<td>{{i['course']}}</td>
+				<td>{{i['semester']}}</td>
+				<td>{{i['date']}}</td>
+				<td>{{i['time']}}</td>
+				
+			</tr>
+			{% endfor %}
+		</table>
+</center>
+ <style type="text/css">
+  	td,th,tr{
+  		border: none!important;
+  	}
+  </style>
+{% include 'footer.html' %}

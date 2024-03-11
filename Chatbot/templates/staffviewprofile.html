@@ -1,0 +1,39 @@
+{% include 'staffheader.html' %}
+<center>
+	<h1>My Profile</h1>
+	<form method="post" style="color:white;">
+		<table class="table" style="width:500px;color:white;">
+				{% if data['up']%}
+			<tr>
+				<th>Firstname</th>
+				<td><input type="" name="firstname" value="{{data['up'][0]['first_name']}}" style="width: 200px;height: 34px;border-radius: 10px;color: black"></td>
+			</tr>
+			<tr>
+				<th>Lastname</th>
+				<td><input type="" name="lastname" value="{{data['up'][0]['last_name']}}" style="width: 200px;height: 34px;border-radius: 10px;color: black"></td>
+			</tr>
+			<tr>
+				<th>Place</th>
+				<td><input type="" name="place" value="{{data['up'][0]['place']}}" style="width: 200px;height: 34px;border-radius: 10px;color: black"></td>
+			</tr>
+			<tr>
+				<th>Phone</th>
+				<td><input type="" name="phone" value="{{data['up'][0]['phone']}}" style="width: 200px;height: 34px;border-radius: 10px;color: black"></td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td><input type="" name="email" value="{{data['up'][0]['email']}}" style="width: 200px;height: 34px;border-radius: 10px;color: black"></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2">
+				<input type="submit" name="submit" value="submit" class="btn btn-primary"></td>
+			</tr>
+			{% endif %}
+		</table>
+</center>
+ <style type="text/css">
+  	td,th,tr{
+  		border: none!important;
+  	}
+  </style>
+{% include 'footer.html' %}

@@ -1,0 +1,52 @@
+{% include 'adminheader.html' %}
+<center>
+{% if data['c_view'] %}
+	<form method="post">
+		<h1>Chat Box</h1>
+	<div style="overflow-y: scroll; width: 700px; height: 500px;" >
+	<table class="table" class="table" style="width:600px;color:white;">
+
+
+	{% for row in data['c_view'] %}
+		{%if row['sender_id']==0 %}
+				<tr>
+					<div style="color: white;margin-right: 20px;" align="right">{{row['message']}}</div>
+				</tr>
+		{% else %}
+				<tr>
+					<div style="color: white;" align="left" >{{row['message']}} </div>
+				</tr>
+		{% endif %}
+{% endfor %}
+
+	</table>
+<!-- 	</div>
+	<table>
+	<tr>
+		<th><input type="text" class="form-control" name="message" required></th>
+		<td><input class="btn btn-outline-info" type="submit" name="submit" value="SEND"></td>
+		</tr>
+	</table>
+	</form><br><br> -->
+{% else %}
+<h1>VIEW CHAT</h1>
+<table class="table" style="width:600px;color:white;">
+	<tr>
+		<th>Sl.No</th>
+		<th>Student Name</th>
+		<th>Course</th>
+		<th>Semester</th>
+	</tr>
+	{% for i in data['view'] %}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{i['first_name']}} {{i['last_name']}}</td>
+		<td>{{i['course']}}</td>
+		<td>{{i['semester']}}</td>
+		<td><a class="btn btn-success" href="?action=chat&lid={{i['login_id']}}">CHAT</a></td>
+	</tr>
+	{% endfor %}
+</table>
+{% endif %}
+</center>
+{% include 'footer.html' %}
