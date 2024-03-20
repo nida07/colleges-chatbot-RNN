@@ -1,6 +1,34 @@
 """
     Interfaces to core functions for Vectorisers docs functionality
 """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import os
 
 from vectorizers.tfidfvectorgenerator import TfidfVectorGenerator
