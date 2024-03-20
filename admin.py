@@ -1,3 +1,6 @@
+#admin functions
+
+
 from flask import *
 from database import*
 

@@ -4,7 +4,7 @@ from database import *
 # from faqengine import *
 import random
 
-student=Blueprint('student',__name__)
+student=Blueprint('student', __name__)
 
 
 # faqslist = ["D:\\Projects\\Chatbot\\static\\data\\Greetings.csv"]
