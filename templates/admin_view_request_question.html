@@ -1,0 +1,51 @@
+{% include 'adminheader.html' %}
+      <style>
+    table {
+
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 20);
+    }
+    .btn-success {
+        background-color: #28a745;
+        color: #fff;
+    }
+</style>
+<style>
+	th,td{
+		height: 30px;
+		color: antiquewhite;
+		padding: 15px;
+	}
+</style>
+<center>
+
+<h1>Question's</h1>
+<table class="table" style="width:500px;color:white;">
+        
+        <tr>
+            <th>Sl.No</th>
+            <th>Question</th>
+            <th>Status</th>
+        </tr>
+        {% for row in data['view'] %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ row['qusetion'] }}</td>
+            {% if row['status']=='pending' %}
+            <td><a href="admin_add_ans?qus={{row['qusetion']}}&req={{row['question_request_id']}}">Add Answer</a></td>
+            {% else %}
+            <td>{{ row['status'] }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+
+
+</center>
+ <style type="text/css">
+    td,th,tr{
+        border: none!important;
+    }
+  </style>
+{% include 'footer.html' %}

@@ -1,0 +1,27 @@
+{% include 'parent_header.html' %}
+
+<center>
+	<h1>View attendance</h1>
+
+	<table class="table" style="width:500px;color: white;">
+		<tr>
+			<th>Student</th>
+			<th>DAte</th>
+			<th>Status</th>
+		</tr>
+		{% for row in data['complaint'] %}
+		<tr>
+			<td>{{row['first_name']}} {{row['last_name']}}</td>			
+			<td>{{row['date']}}</td>
+			<td>{{row['status']}}</td>
+			
+		</tr>
+
+		{% endfor %}
+</table>
+</center>
+</center>
+
+
+
+{% include 'footer.html' %}

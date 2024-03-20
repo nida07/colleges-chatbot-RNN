@@ -1,0 +1,25 @@
+{% include 'student_header.html' %}
+<br><br><br>
+<center>
+
+	<form method="post">
+	<h2>Time Table</h2>
+
+<table class="table" style="width:500px;color:white;">
+		
+		<tr>
+			<th>Course</th>
+			<th></th>
+			<th></th>
+		</tr>
+		{% for row in data['course'] %}
+		<tr>
+			<td>{{ row['course'] }}</td>
+			<td><a href="student_view_timetable?cid={{row['course_id']}}" class="btn btn-danger">View Time Table</a></td>
+		</tr>
+		{% endfor%}
+	</table>
+</form>
+</center>
+
+{% include 'footer.html' %}

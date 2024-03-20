@@ -1,0 +1,68 @@
+{%include 'publicheader.html'%}
+	<div id="pageintro" class="hoc clear" > 
+    <!-- ################################################################################################ -->
+    <article class="center">
+    <form action="" method="post" style="color: white">
+<br><br><br>
+	<center>	
+		<h1 style="font-style: italic;">Parent Registration</h1>
+		<table class="table" style="width:500px;color:white;">
+	<tr>
+		<th>Student</th>
+		<td><select name="stud" class="form-control" required="" style="width: 250px;border-radius: 10px;color: white;">
+			<option>select----</option>
+			{% for r in data['student']%}
+			<option value="{{r['student_id']}}" style="color: black">
+{{r['first_name']}} {{r['last_name']}}				
+			</option>
+			{% endfor%}
+		</select></td>
+	</tr>
+	<tr>
+		<th>First Name</th>
+		<td style="color: white"><input type="text" name="firstname" style="width: 250px;height: 38px;border-radius: 10px;color: white" required="" class="form-control"></td>
+	</tr>
+	<tr>
+		<th>Last Name</th>
+		<td style="color: white"><input type="text" name="lastname" required="" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+	</tr>
+	<tr>
+        <th>Place</th>
+		<td style="color: white"><input type="text" name="place" required="" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+	</tr>
+    <tr>
+        <th>phone</th>
+        <td style="color: white"><input type="text" name="phone" required="" pattern="[0-9]{10}" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+    </tr>  
+	<tr> 
+		<th>Email</th>
+		<td style="color: white"><input type="Email" name="email" required=""  pattern=".+@gmail\.com" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+	</tr>
+	<tr>
+		<th>Username</th>
+		<td style="color: white"><input type="text" name="uname" required="" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+	</tr> 
+	<tr>
+		<th>Password</th>
+		<td style="color: white"><input type="password" name="passw" required="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white" ></td>
+	</tr>
+	<td align="center" colspan="2">
+	<input type="submit" class="btn btn-outline-primary" name="register" value="JOIN IN">
+	</td>
+	</center>
+
+</table>
+</form>
+</center>
+</article>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+
+
+  <style type="text/css">
+  	td,th,tr{
+  		border: none!important;
+  	}
+  </style>
+{% include 'footer.html' %}

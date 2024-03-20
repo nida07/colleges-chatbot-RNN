@@ -1,0 +1,42 @@
+{% include 'adminheader.html' %}
+      <style>
+    table {
+
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 20);
+    }
+    .btn-success {
+        background-color: #28a745;
+        color: #fff;
+    }
+</style>
+<style>
+	th,td{
+		height: 30px;
+		color: antiquewhite;
+		padding: 15px;
+	}
+</style>
+<center>
+
+<h1>Add Answer</h1>
+<form method="post">
+<table class="table" style="width:500px;color:white;">
+     <tr>
+         <th>Answer</th>
+         <td><input type="text" class="form-control" required="" name="ans"></td>
+     </tr>   
+     <tr>
+         <td align="center" colspan="2"><input type="submit" class="btn btn-success" name="add"></td>
+     </tr>
+</table>
+</form>
+
+</center>
+ <style type="text/css">
+    td,th,tr{
+        border: none!important;
+    }
+  </style>
+{% include 'footer.html' %}

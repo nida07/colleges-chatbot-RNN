@@ -1,0 +1,122 @@
+{% include 'staffheader.html' %}
+<center>
+	<form method="post">
+	{% if data['Edit'] %}
+	<h1>Update Student</h1>
+	<table class="table" style="width:500px;color:white;">
+		<tr>
+			<th>Course</th>
+			<td><select name="course" style="width: 250px;border-radius: 10px;color: white">
+				{% for row in data['crs'] %}
+				<option value="{{ row['course_id'] }}" >{{row['course']}}</option>
+				{% endfor %}
+	 		</select></td></tr>
+	 	<tr>
+	 		<th>Semester</th>
+	 		<td><input type="text" name="semester"  required="" value="{{data['Edit'][0]['semester']}}" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+	 	</tr>
+		</tr>
+		<tr>
+			<th>First Name</th>
+			<td><input type="text" name="firstname"  required="" value="{{data['Edit'][0]['first_name']}}" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+		</tr>
+		<tr>
+			<th>Last Name</th>
+			<td><input type="text" name="lastname"  required="" value="{{data['Edit'][0]['last_name']}}" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+		</tr>
+		<tr>
+			<th>Place</th>
+			<td><input type="text" name="place"  required="" value="{{data['Edit'][0]['place']}}" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+		</tr>
+		<tr>
+			<th>Email</th>
+			<td><input type="email" name="email" pattern=".+@gmail\.com"  required="" value="{{data['Edit'][0]['email']}}" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2">
+			<input type="submit" name="update" value="submit" class="btn btn-primary" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: black"></td>
+		</tr>
+	</table>
+	{% else %}
+	<br><br><br>
+		<h2>Manage Student</h2>
+			<table class="table" style="width:500px;color:white;">
+			<tr>
+				<th>Course</th>
+				<td><select name="course" class="form-control" style="width: 250px;border-radius: 10px;color: white">
+					{% for row in data['crs'] %}
+						<option value="{{ row['course_id'] }}" style="color: black">{{row['course'] }}</option>
+					{% endfor %}	
+				</select></td>
+			</tr>
+			<tr>
+				<th>Semester</th>
+				<td><input type="text" name="semester" required="" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+			</tr>
+			<tr>
+				<th>First Name</th>
+				<td><input type="text" name="firstname"  required="" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+			</tr>
+			<tr>
+				<th>Last Name</th>
+				<td><input type="text" name="lastname"  required="" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+			</tr>
+			<tr>
+				<th>Place</th>
+				<td><input type="text" name="place"  required=""  class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td><input type="email" name="email"  required="" pattern=".+@gmail\.com" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+			</tr>
+			<tr>
+				<th>Username</th>
+				<td><input type="text" name="username"  required="" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td><input type="password" name="password"  required="" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2">
+				<input type="submit" name="submit" value="submit" class="btn btn-primary"></td>
+			</tr>
+		</table>
+		{% endif %}
+		<h2>View Student</h2>
+		<table class="table" style="width:500px;color:white;">
+		<tr>
+			<th>Course</th>
+			<th>Semester</th>
+			<th>Firstname</th>
+			<th>Lastname</th>
+			<th>Place</th>
+			<th>Email</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+
+		{% for row in data['student'] %}
+		<tr>
+			<td>{{row['course']}}</td>
+			<td>{{row['semester']}}</td>
+			<td>{{row['first_name']}}</td>
+			<td>{{row['last_name']}}</td>
+			<td>{{row['place']}}</td>
+			<td>{{row['email']}}</td>
+			<td><a href="staffaddattendance?sid={{row['student_id']}}&id={{row['login_id']}}" class="btn btn-success">add attendance</a></td>
+			<td><a href="?action=update&sid={{row['student_id']}}&id={{row['login_id']}}" class="btn btn-primary">Update</a></td>
+			<td><a href="?action=delete&id={{row['login_id']}}&sid={{row['student_id']}}" class="btn btn-danger">Delete</a></td>
+
+		</tr>
+		{% endfor %}
+		</table>
+</center>
+</form>
+ <style type="text/css">
+  	td,th,tr{
+  		border: none!important;
+  	}
+  </style>
+{% include 'footer.html' %}

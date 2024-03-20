@@ -1,0 +1,74 @@
+{% include 'adminheader.html' %}
+      <style>
+    table {
+
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 20);
+    }
+    .btn-success {
+        background-color: #28a745;
+        color: #fff;
+    }
+</style>
+<style>
+	th,td{
+		height: 30px;
+		color: antiquewhite;
+		padding: 15px;
+	}
+</style>
+<center>
+	{% if data['update_course'] %}
+	<h1>Update Course</h1>
+		<form method="post">
+			<table class="table" style="width:500px;color:white;">
+			<tr>
+				<th>Course</th>
+				<td><input type="text" name="course" value="{{data['update_course'][0]['course']}}" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="update" value="Update" class="btn btn-primary"></td>
+			</tr>
+		</form>
+	</table>
+	{% else %}	
+	<br><br><br>
+	<h1>Course</h1>
+	<form method="post">
+	<table class="table" style="width:500px;color:white;">
+		<tr>
+			<th>Course</th>
+			<td><input type="text" name="course_name" required="" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;color: white"></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2">
+				<input type="submit" name="submit" value="SUBMIT" class="btn btn-primary">
+			</td>
+		</tr>
+	</table>
+
+	<table class="table" style="width:500px;color:white;">
+		
+		<tr>
+			<th>Course</th>
+			<th></th>
+			<th></th>
+		</tr>
+		{% for row in data['course'] %}
+		<tr>
+			<td>{{ row['course'] }}</td>
+			<td><a href="?action=update&cid={{ row['course_id'] }}" class="btn btn-success">Update</a></td>
+			<td><a href="?action=delete&cid={{ row['course_id'] }}" class="btn btn-danger">Delete</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+	{% endif %}
+</form>
+</center>
+<style type="text/css">
+  	td,th,tr{
+  		border: none!important;
+  	}
+  </style>
+{% include 'footer.html' %}

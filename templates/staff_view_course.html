@@ -1,0 +1,23 @@
+{% include 'staffheader.html' %}
+<center>
+
+	<form method="post">
+	<h2>Time Table</h2>
+
+<table class="table" style="width:500px;color:white;">
+		
+		<tr>
+			<th>Course</th>
+			<th></th>
+		</tr>
+		{% for row in data['course'] %}
+		<tr>
+			<td>{{ row['course'] }}</td>
+			<td><a href="staffaddtimetable?cid={{row['course_id']}}" class="btn btn-danger">Add Time Table</a></td>
+		</tr>
+		{% endfor%}
+	</table>
+</form>
+</center>
+
+{% include 'footer.html' %}

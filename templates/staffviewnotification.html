@@ -1,0 +1,21 @@
+{% include 'staffheader.html' %}
+<center>
+	<h1>View Notification</h1>
+	<form method="post">
+		<table class="table" style="width:500px;color:white;">
+			<tr>
+				<th>Sl no</th>
+				<th>Notification</th>
+				<th>Date</th>
+			</tr>
+			{% for row in data['noti'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['notification']}}</td>
+				<td>{{row['date']}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+</center>
+
+{% include 'footer.html' %}

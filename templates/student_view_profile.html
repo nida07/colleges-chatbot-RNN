@@ -1,0 +1,39 @@
+{% include 'student_header.html' %}
+<center>
+	<h1> Profile</h1>
+	<table class="table" style="width:500px;color:white;">
+				{% if data['up']%}
+			<tr>
+				<th style="color:white;">Firstname</th>
+				<td><input type="" name="firstname" value="{{data['up'][0]['first_name']}}"style="width: 250px;height: 38px;border-radius: 10px;color: black"></td>
+			</tr>
+			<tr>
+				<th style="color:white">Lastname</th>
+				<td><input type="" name="lastname" value="{{data['up'][0]['last_name']}}" style="width: 250px;height: 38px;border-radius: 10px;color: black"></td>
+			</tr>
+			<tr>
+				<th style="color:white">Place</th>
+				<td><input type="" name="place" value="{{data['up'][0]['place']}}" style="width: 250px;height: 38px;border-radius: 10px;color: black"></td>
+			</tr>
+			<tr>
+				<th style="color:white">Course</th>
+				<td><input type="" name="course" readonly="" value="{{data['up'][0]['course']}}" style="width: 250px;height: 38px;border-radius: 10px;color: black"></td>
+			</tr>
+			<tr>
+				<th style="color:white">Semester</th>
+				<td><input type="" name="semester" value="{{data['up'][0]['semester']}}" style="width: 250px;height: 38px;border-radius: 10px;color: black"></td>
+			</tr>
+			<tr>
+				<th style="color:white">Email</th>
+				<td><input type="" name="email" value="{{data['up'][0]['email']}}" style="width: 250px;height: 38px;border-radius: 10px;color: black"></td>
+			</tr>
+			
+			<tr>
+				<td align="center" colspan="2">
+				<input type="submit" name="submit" class="btn btn-success" value="submit" ></td>
+			</tr>
+			{% endif %}
+		</table>
+</center>
+
+{% include 'footer.html' %}
