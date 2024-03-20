@@ -1,5 +1,25 @@
 # Ref: https://github.com/premrajnarkhede/sentence2vec/blob/master/plain%20average%20of%20word%20vectors%20example/sen2vec_plain_average_word_vectors.py
 
+""" working on how to collect data from the previous info"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import spacy
 import numpy as np
 

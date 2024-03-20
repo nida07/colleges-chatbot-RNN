@@ -1,3 +1,24 @@
+#not needed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Ref: https://github.com/hanxiao/bert-as-service#building-a-qa-semantic-search-engine-in-3-minutes
 # need to have bert server running in a separate window
 # bert-serving-start -num_worker=1 -model_dir=D:/Yogesh/Education/DataScience/Datasets/uncased_L-12_H-768_A-12 -max_seq_len NONE

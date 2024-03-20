@@ -1,3 +1,24 @@
+# memory error , crashed !!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import os
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer

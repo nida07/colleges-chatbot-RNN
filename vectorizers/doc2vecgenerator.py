@@ -1,3 +1,35 @@
+#Overall, this class facilitates the generation of Doc2Vec embeddings for text inputs and querying of these embeddings. It's designed to handle large amounts of text data by storing the trained model on disk and loading it as needed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import os
 
 import gensim
